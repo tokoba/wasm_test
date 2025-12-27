@@ -1,6 +1,7 @@
 [package]
 name = "backend"
 version = "0.1.0"
+# 現在は2025年で，最新の Rust Edition == "2024"
 edition = "2024"
 
 [lib]
@@ -9,7 +10,8 @@ crate-type = ["cdylib"] # 必須設定
 [dependencies]
 # 2025年時点の最新安定版を指定
 wasm-bindgen = "0.2.106"
-js-sys = "0.3"
+js-sys = "0.3.83"
+fixedbitset = "0.5.7"
 
 # Web APIへのアクセス。機能ごとのfeatureフラグが必要
 # [dependencies.web-sys]
@@ -19,4 +21,4 @@ js-sys = "0.3"
 console_error_panic_hook = { version = "0.1.7", optional = true }
 
 [dev-dependencies]
-wasm-bindgen-test = "0.3"
+wasm-bindgen-test = "0.3.56"

@@ -19,7 +19,7 @@ pub struct Universe {
 #[wasm_bindgen]
 impl Universe {
   pub fn new(width: u32, height: u32) -> Universe {
-    let cells = (9..width * height)
+    let cells = (0..width * height)
       .map(|i| {
         if i % 2 == 0 || i % 7 == 0 {
           Cell::Alive
@@ -62,7 +62,7 @@ impl Universe {
           (Cell::Alive, 2) | (Cell::Alive, 3) => Cell::Alive,
           (Cell::Alive, x) if x > 3 => Cell::Dead,
           (Cell::Dead, 3) => Cell::Alive,
-          (otherwize, _) => otherwize,
+          (otherwise, _) => otherwise,
         };
 
         next[index] = next_cell;
